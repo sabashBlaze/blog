@@ -687,6 +687,8 @@ footer[role="contentinfo"] a:hover {
 }
 .entry-header {
 	margin-bottom: 24px;
+	height:auto;
+	background:none;
 	margin-bottom: 1.714285714rem;
 }
 .entry-header img.wp-post-image {
@@ -1635,9 +1637,9 @@ img#wpstats {
 
 /* Minimum width of 960 pixels. */
 @media screen and (min-width: 960px) {
-	body {
+	/*body {
 		background-color: #e6e6e6;
-	}
+	}*/
 	body .site {
 		padding: 0 40px;
 		padding: 0 2.857142857rem;
@@ -1645,7 +1647,7 @@ img#wpstats {
 		margin-top: 3.428571429rem;
 		margin-bottom: 48px;
 		margin-bottom: 3.428571429rem;
-		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	/*	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);*/
 	}
 	body.custom-background-empty {
 		background-color: #fff;

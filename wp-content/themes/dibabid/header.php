@@ -28,12 +28,25 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
+<link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/styles/main.css" />
 <?php wp_head(); ?>
+<script type="text/javascript">
+var $=jQuery.noConflict();
+//<![CDATA[
+$(function(){
+	 $.get("http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/",function(data,status){
+	  $('#masthead').html($(data).filter('.navbar-fixed-top').clone());
+	  $('#footer-col').html($(data).filter('#footerwrap').clone());
+  });
+});
+//]]>
+</script>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
+<div id="masthead"></div>
+<?php /*	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -48,6 +61,6 @@
 		<?php if ( get_header_image() ) : ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 		<?php endif; ?>
-	</header><!-- #masthead -->
+	</header> */?><!-- #masthead -->
 
 	<div id="main" class="wrapper">
