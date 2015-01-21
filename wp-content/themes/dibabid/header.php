@@ -29,23 +29,45 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/styles/main.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 <?php wp_head(); ?>
 <script type="text/javascript">
 var $=jQuery.noConflict();
 //<![CDATA[
-$(function(){
+/*$(function(){
 	 $.get("http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/",function(data,status){
 	  $('#masthead').html($(data).filter('.navbar-fixed-top').clone());
 	  $('#footer-col').html($(data).filter('#footerwrap').clone());
   });
-});
+});*/
 //]]>
+
 </script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/jquery/jquery.min.js"></script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular/angular.js"></script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/ng-file-upload/angular-file-upload-shim.min.js"></script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-resource/angular-resource.js"></script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-cookie/angular-cookie.js"></script>
+	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!--<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/components/angular-sanitize/angular-sanitize1.js"></script>-->
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/ng-file-upload/angular-file-upload.min.js"></script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-route/angular-route.js"></script>
+ <script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/ng-idle/angular-idle.min.js"></script>
+<script type="text/javascript">
+angular.module('FasbidClient',['ngRoute', 'ui.bootstrap','angularFileUpload','ipCookie','ngIdle']).run();
+</script>
+	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/services/dataService.js"></script>
+	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/services/afns.js"></script>
+	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/services/sandf.js"></script>
+<!--<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/config.js"></script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/app.js"></script>-->
+<script src="<?php echo get_template_directory_uri(); ?>/js/fbheader.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/fbfooter.js"></script>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-<div id="masthead"></div>
+<body <?php body_class(); ?> ng-app="FasbidClient">
+<div id="page" class="hfeed site" >
+<div fbheader></div>
 <?php /*	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
