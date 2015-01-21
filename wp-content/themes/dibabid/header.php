@@ -43,24 +43,25 @@ var $=jQuery.noConflict();
 //]]>
 
 </script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/jquery/jquery.min.js"></script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular/angular.js"></script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/ng-file-upload/angular-file-upload-shim.min.js"></script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-resource/angular-resource.js"></script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-cookie/angular-cookie.js"></script>
-	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<!--<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/components/angular-sanitize/angular-sanitize1.js"></script>-->
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/ng-file-upload/angular-file-upload.min.js"></script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/angular-route/angular-route.js"></script>
- <script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/components/ng-idle/angular-idle.min.js"></script>
+<?php $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';?>
+<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/jquery/jquery.min.js"></script>
+<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular/angular.js"></script>
+<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/ng-file-upload/angular-file-upload-shim.min.js"></script>
+<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular-resource/angular-resource.js"></script>
+<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular-cookie/angular-cookie.js"></script>
+	<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!--<script src="http://<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/components/angular-sanitize/angular-sanitize1.js"></script>-->
+<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/ng-file-upload/angular-file-upload.min.js"></script>
+<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular-route/angular-route.js"></script>
+ <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/ng-idle/angular-idle.min.js"></script>
 <script type="text/javascript">
 angular.module('FasbidClient',['ngRoute', 'ui.bootstrap','angularFileUpload','ipCookie','ngIdle']).run();
 </script>
-	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/services/dataService.js"></script>
-	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/services/afns.js"></script>
-	<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/services/sandf.js"></script>
-<!--<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/config.js"></script>
-<script src="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/scripts/app.js"></script>-->
+	<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/scripts/services/dataService.js"></script>
+	<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/scripts/services/afns.js"></script>
+	<script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/scripts/services/sandf.js"></script>
+<!--<script src="http://<?php echo $_SERVER['HTTP_HOST'];?>/auctions/scripts/config.js"></script>
+<script src="http://<?php echo $_SERVER['HTTP_HOST'];?>/auctions/scripts/app.js"></script>-->
 <script src="<?php echo get_template_directory_uri(); ?>/js/fbheader.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/fbfooter.js"></script>
 </head>
