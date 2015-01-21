@@ -3,15 +3,21 @@
 
 
 angular.module('FasbidClient')
-        .directive('fbheader', ['ipCookie','Dataservice', '$location', '$window', '$rootScope','$routeParams','$idle','$modal',
-            function(ipCookie,Dataservice, $location, $window, $rootScope,$routeParams,$idle, $modal) {
+        .directive('fbheader', ['ipCookie','Dataservice', '$location', '$window', '$rootScope','$routeParams','$idle','$modal','$http','$templateCache','$compile',
+            function(ipCookie,Dataservice, $location, $window, $rootScope,$routeParams,$idle, $modal,$http,$templateCache,$compile) {
                 return {
-                    templateUrl: $location.protocol() + '://' + $location.host()+'/auctions/templates/header.html',
-                    restrict: 'A',
+                   // templateUrl: $location.protocol() + '://' + $location.host()+'/auctions/templates/header.html',
+                    restrict: 'EA',
                     scope: {
                         isopen: '=isopen'
                     },
-                    link: function(scope) {
+                    link: function(scope,iElement) {
+						 $http.get($location.protocol() + '://' + $location.host()+'/auctions/templates/header.html', {cache: $templateCache}).success(function(tplContent){
+								tplContent=tplContent.split('#/').join('/auctions/#/');
+								tplContent=tplContent.split('src="images/').join('src="/auctions/images/')
+								iElement.replaceWith($compile(tplContent)(scope));                
+             			 });  
+						//console.log(scope);
 						//console.log('header='+JSON.stringify($routeParams));
 						$idle.watch();
 						scope.cats=[];
