@@ -34,7 +34,7 @@ $tmp=explode('https',get_template_directory_uri());
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <link rel="stylesheet" href="<?php echo  $protocol.$_SERVER['SERVER_NAME'];?>/auctions/styles/main.css" />
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<?php echo  $protocol;?>maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 <?php wp_head(); ?>
 <script type="text/javascript">
 var $=jQuery.noConflict();
