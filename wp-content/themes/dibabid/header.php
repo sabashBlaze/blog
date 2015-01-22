@@ -46,7 +46,7 @@ var $=jQuery.noConflict();
 <?php
 
 
- $protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,strpos( $_SERVER["SERVER_PROTOCOL"],'/'))).'://';//stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';?>
+ $protocol =stripos(get_template_directory_uri(),'https') === true ? 'https://' : 'http://';?>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/jquery/jquery.min.js"></script>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular/angular.js"></script>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/ng-file-upload/angular-file-upload-shim.min.js"></script>
