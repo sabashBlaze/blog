@@ -46,7 +46,7 @@ var $=jQuery.noConflict();
 <?php
 
 
- $protocol =stripos(get_template_directory_uri(),'https') === true ? 'https://' : 'http://';?>
+ $protocol =(stripos(get_template_directory_uri(),'https') === true) ? 'https://' : 'http://';?>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/jquery/jquery.min.js"></script>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular/angular.js"></script>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/ng-file-upload/angular-file-upload-shim.min.js"></script>
@@ -70,6 +70,7 @@ angular.module('FasbidClient',['ngRoute', 'ui.bootstrap','angularFileUpload','ip
 </head>
 
 <body <?php body_class(); ?> ng-app="FasbidClient">
+<?php echo get_template_directory_uri();?>
 <div id="page" class="hfeed site" >
 <div fbheader></div>
 <?php /*	<header id="masthead" class="site-header" role="banner">
