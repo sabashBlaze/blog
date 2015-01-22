@@ -24,11 +24,16 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php
+
+$tmp=explode('https',get_template_directory_uri());
+
+ $protocol =(count($tmp)== 2) ? 'https://' : 'http://';?>
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME'];?>/auctions/styles/main.css" />
+<link rel="stylesheet" href="<?php echo  $protocol.$_SERVER['SERVER_NAME'];?>/auctions/styles/main.css" />
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 <?php wp_head(); ?>
 <script type="text/javascript">
@@ -43,11 +48,7 @@ var $=jQuery.noConflict();
 //]]>
 
 </script>
-<?php
 
-$tmp=explode('https',get_template_directory_uri());
-
- $protocol =(count($tmp)== 2) ? 'https://' : 'http://';?>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/jquery/jquery.min.js"></script>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/angular/angular.js"></script>
 <script src="<?php echo $protocol.$_SERVER['HTTP_HOST'];?>/auctions/components/ng-file-upload/angular-file-upload-shim.min.js"></script>
@@ -71,9 +72,7 @@ angular.module('FasbidClient',['ngRoute', 'ui.bootstrap','angularFileUpload','ip
 </head>
 
 <body <?php body_class(); ?> ng-app="FasbidClient">
-<?php echo get_template_directory_uri();
-echo count($tmp);
-?>
+
 <div id="page" class="hfeed site" >
 <div fbheader></div>
 <?php /*	<header id="masthead" class="site-header" role="banner">
